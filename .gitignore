@@ -1,0 +1,62 @@
+# Byte-compiled / cache / logs
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Virtual environment
+venv/
+.env/
+.venv/
+ENV/
+env/
+pip-log.txt
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.cache
+test-results/
+
+# FastAPI auto-generated OpenAPI docs (if stored)
+openapi.json
+
+# MyPy
+.mypy_cache/
+
+# Pydantic
+*.schema.json
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environment variables
+*.env
+*.env.*
+
+# Docker
+*.pid
+*.tar
+*.gz
+
+# Local dev
+local_settings.py
+instance/
