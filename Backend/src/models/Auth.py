@@ -1,14 +1,13 @@
 from pydantic import EmailStr, BaseModel
 
 class UserBase(BaseModel):
-    id: int
+    email: EmailStr
 
     class Config:
         from_attributes = True
 
 
-class UserAuth(UserBase):
-    name: str
+class UserCreate(UserBase):
     email: EmailStr
     password: str
 
@@ -16,8 +15,16 @@ class UserAuth(UserBase):
         from_attributes = True
 
 
-class UserResponse(UserAuth):
-    name: str
+class UserAuth(UserBase):
+    email: EmailStr
+    password: str
+
+    class Config:
+        from_attributes = True
+
+
+class UserResponse(UserBase):
+    id: str
     email: EmailStr
 
     class Config:

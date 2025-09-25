@@ -1,6 +1,3 @@
-from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo import MongoClient
 
-MONGO_DETAILS = "Url"
-
-client = AsyncIOMotorClient(MONGO_DETAILS)
-database = client.mydatabase
+client = MongoClient("mongodb+srv://duducostalobo10:Senac123@ludox.6bhfhml.mongodb.net/?retryWrites=true&w=majority&appName=Ludox")  

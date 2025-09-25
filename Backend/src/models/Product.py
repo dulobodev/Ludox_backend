@@ -1,14 +1,8 @@
-from pydantic import EmailStr, BaseModel
+from pydantic import BaseModel
 from decimal import Decimal
+from fastapi import Form
 
 class ProductBase(BaseModel):
-    id: int
-
-    class Config:
-        from_attributes = True
-
-
-class Product(ProductBase):
     title: str
     description: str
     feedback: int
@@ -19,9 +13,25 @@ class Product(ProductBase):
         from_attributes = True
 
 
-class ProductResponse(Product):
-    id: int
-    title: str
+class ProductCreate(ProductBase):
+    @classmethod
+    def as_form(
+        cls,
+        title: str = Form(...),
+        description: str = Form(...),
+        feedback: int = Form(...),
+        value: Decimal = Form(...),
+        parcela: int = Form(...),
+    ):
+        return cls(
+            title=title,
+            description=description,
+            feedback=feedback,
+            value=value,
+            parcela=parcela,
+        )
 
-    class Config:
-        from_attributes = True
+
+class ProductResponse(ProductBase):
+    id: str
+    image_uuid: str
