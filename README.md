@@ -60,8 +60,7 @@ poetry shell
 ### 5. Configure as variáveis de ambiente (opcional)
 Crie um arquivo `.env` na raiz do projeto para configurações personalizadas:
 ```env
-DB_NAME =
-DB_PASSWORD =
+MONGODB_URI = 
 ```
 
 ## 🚀 Como Executar
