@@ -1,5 +1,4 @@
 from fastapi import UploadFile, File, Depends, APIRouter, HTTPException
-from fastapi.responses import FileResponse
 from src.core.db import client
 from src.models.Product import ProductCreate, ProductResponse
 
